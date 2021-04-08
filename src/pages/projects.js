@@ -1,16 +1,15 @@
 import React from "react"
 import { Link } from "gatsby"
-
 import Header from "../components/header"
 
-const Home = () => {
+const Projects = () => {
   return (
-    <div class="container">
-      <Link to="/projects/">Projects</Link>
+    <div>
       <Header />
-      <h1>My Portfolio</h1>
+      <Link to="/"></Link>
+      My Projects
     </div>
   )
 }
 
-export default Home
+export default Projects
