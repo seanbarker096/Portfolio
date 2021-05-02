@@ -29,10 +29,12 @@ $inactive-transition-time: 1s;
 }
 
 .popup {
-  width: 80%;
-  @include respond(phone) {
-    width: 90%;
-  }
+  min-width: 80%;
+  max-width: 90%;
+  // @include respond(phone) {
+  //   min-width: 90%;
+  // }
+  max-height: 90vh;
   border-radius: 5px;
   display: flex;
   //stop image stretching
