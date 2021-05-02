@@ -16,10 +16,6 @@
   @include respond(tablet) {
     font-size: $font-size-small;
   }
-  // font-size: 1.5rem;
-  // @include respond(tablet) {
-  //   font-size: 1.5rem;
-  // }
 
   .heading {
     @include headingPrimary($color-primary-very-light);

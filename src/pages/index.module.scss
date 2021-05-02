@@ -25,20 +25,25 @@
     }
   }
 
-  h1 {
+  .headingPrimary {
     background-color: $color-secondary;
     @include uMarginBottomLarge;
-    // font-size: 10rem;
-    // @include respond(tablet) {
-    //   font-size: 5rem;
-    // }
+    @include headingPrimaryHuge(black); // font-size: 10rem;
+    @include respond(tablet) {
+      @include headingPrimary(black);
+      @include uMarginBottomMed;
+    }
   }
 
-  h2 {
+  .headingSecondary {
     // font-size: 5rem;
     @include uMarginBottomHuge;
+    font-size: 4rem;
+    padding: 0 10%;
     @include respond(tablet) {
       @include uMarginBottomMed;
+      @include headingSecondary(black);
+      padding: 0 7.5%;
     }
     // @include respond(tablet) {
     //   font-size: 3rem;

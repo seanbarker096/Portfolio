@@ -1,7 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import * as homeStyles from "./index.module.scss"
 import NavButton from "../components/NavButton"
 import icons from "../images/sprite.svg"
@@ -11,8 +10,8 @@ const Home = () => {
     <Layout>
       <main class={homeStyles.sectionHome}>
         <div class={homeStyles.container}>
-          <h1 className="headingPrimary uMarginBottomHuge">I'm Sean Barker,</h1>
-          <h2>
+          <h1 className={homeStyles.headingPrimary}>I'm Sean Barker,</h1>
+          <h2 className={homeStyles.headingSecondary}>
             an engineering graduate looking for oppurtunities in full stack web
             development
           </h2>

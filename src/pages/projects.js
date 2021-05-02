@@ -1,8 +1,7 @@
 import React from "react"
 import { useState } from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import * as projectsStyles from "./projects.module.scss"
 import ProjectPopUp from "../components/ProjectPopUp"
 import ProjectCard from "../components/ProjectCard"
@@ -293,7 +292,11 @@ const Footer = ({ url1, icon1Id, url2, icon2Id, className }) => {
         target="_blank"
         className={projectsStyles.popUpLinks}
       >
-        <img src={`${icon2Id}`} className={className}></img>
+        <img
+          src={`${icon2Id}`}
+          alt="deployment-site-icon"
+          className={className}
+        ></img>
         Visit the live site
       </a>
     </div>

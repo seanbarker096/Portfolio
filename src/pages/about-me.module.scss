@@ -8,7 +8,6 @@
   padding: 0 20% 0 20%;
   //stops grow on hover expanding beyond page margins
   overflow: hidden;
-  font-weight: bold;
   @include respond(tablet) {
     font-size: $font-size-small;
     padding: 0 10% 0 10%;
@@ -72,17 +71,13 @@
       }
     }
   }
-  .aboutMeSection {
+  .aboutMe {
     .icon {
       visibility: hidden;
       width: 0;
       height: 0;
     }
   }
-
-  // .text {
-  //   margin-top: 1rem;
-  // }
 
   .paddingRight {
     display: flex;

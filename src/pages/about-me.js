@@ -2,17 +2,10 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
-import NavButton from "../components/NavButton"
 import * as aboutMeStyles from "./about-me.module.scss"
 import icons from "../images/sprite.svg"
 import bristolLogo from "../images/university-of-bristol-logo.png"
 import mernLogo from "../images/mern-stack.png"
-
-// import {
-//   // aboutMeText,
-//   // educationText,
-//   developmentExperienceText,
-// } from "../text/about-me-text"
 
 const AboutMe = () => {
   const PaddedAboutSection = ({
@@ -40,9 +33,7 @@ const AboutMe = () => {
             className={`${aboutMeStyles.flexVertical} ${aboutMeStyles.inheritWidthParent}`}
           > */}
           {/* <h1 className={aboutMeStyles.heading}>{title}</h1> */}
-          <div
-            className={`${aboutMeStyles.sectionContent} ${aboutMeStyles.inheritSiblingWidthWrapper}`}
-          ></div>
+          {/* <div className={aboutMeStyles.inheritSiblingWidthWrapper}></div> */}
           {/* </div> */}
           {imgUrl ? (
             <img
@@ -55,11 +46,7 @@ const AboutMe = () => {
               <use xlinkHref={`${icons}#${iconId}`}></use>
             </svg>
           )}
-          <div
-            className={`${aboutMeStyles.inheritSiblingWidthContent} ${aboutMeStyles.text}`}
-          >
-            {children}
-          </div>
+          <div>{children}</div>
         </section>
       </div>
     )
@@ -75,7 +62,6 @@ const AboutMe = () => {
           padding="left"
           sectionName="aboutMe"
           id={aboutMeStyles.notLastPaddedSection}
-          sectionName="aboutMeSection"
         >
           {aboutMeText}
         </PaddedAboutSection>
@@ -101,14 +87,8 @@ const AboutMe = () => {
 
         <section className={`${aboutMeStyles.navSection}`}>
           <Link to="/projects/">
-            <h1 className={aboutMeStyles.link}>Check out my work</h1>
+            <h1>Check out my work</h1>
           </Link>
-          {/* <NavButton className={aboutMeStyles.navButton} to="/projects/">
-            <span className={aboutMeStyles.buttonText}>My work</span>
-            <svg className={aboutMeStyles.buttonIcon}>
-              <use xlinkHref={`${icons}#icon-circle-right`}></use>
-            </svg>
-          </NavButton> */}
         </section>
       </main>
     </Layout>

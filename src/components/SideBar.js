@@ -51,7 +51,7 @@ const SideBar = () => {
           rel="external"
           target="_blank"
         >
-          <svg className={`${sideBarStyles.icon} ${sideBarStyles.socialsIcon}`}>
+          <svg className={sideBarStyles.icon}>
             <use xlinkHref={`${icons}#icon-mail2`}></use>
           </svg>
         </a>
@@ -60,7 +60,7 @@ const SideBar = () => {
           rel="external"
           target="_blank"
         >
-          <svg className={`${sideBarStyles.icon} ${sideBarStyles.socialsIcon}`}>
+          <svg className={`${sideBarStyles.icon}`}>
             <use xlinkHref={`${icons}#icon-linkedin`}></use>
           </svg>
         </a>
@@ -69,7 +69,7 @@ const SideBar = () => {
           rel="external"
           target="_blank"
         >
-          <svg className={`${sideBarStyles.icon} ${sideBarStyles.socialsIcon}`}>
+          <svg className={sideBarStyles.icon}>
             <use xlinkHref={`${icons}#icon-github`}></use>
           </svg>
         </a>

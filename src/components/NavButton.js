@@ -8,7 +8,7 @@ const NavButton = ({ children, className, to }) => {
     navigate(to)
   }
   return (
-    <div onClick={handleClick} className="navButtonWrapper">
+    <div onClick={handleClick}>
       <Button className={className}>{children}</Button>
     </div>
   )

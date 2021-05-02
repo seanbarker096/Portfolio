@@ -49,7 +49,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+@mixin headingPrimaryHuge($color:color-black){
+  font-size: $font-size-huge;
+  color:$color
+}
 @mixin headingPrimary($color: $color-black) {
   font-size: $font-size-large * 1.2;
   color: $color;

@@ -98,7 +98,7 @@
       height: 100%;
       position: relative;
 
-      li {
+      .icon {
         cursor: pointer;
         font-weight: $font-weight-heavy;
         width: 15%;
@@ -125,7 +125,8 @@
           @include centerAbsolute;
         }
 
-        &:hover {
+        &:hover,
+        &:focus {
           animation: hvr-buzz-out 1s linear 1, border-fade-in 1s linear 1;
           box-shadow: 0 0.5rem 0.4rem rgba(0, 0, 0, 0.5),
             inset 0 0 0 0.3rem $color-secondary-dark;

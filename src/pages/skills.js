@@ -2,7 +2,7 @@
 import React from "react"
 import { useState } from "react"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import * as skillsStyles from "./skills.module.scss"
 // import skillsText from "../text/skills-text"
 
@@ -28,13 +28,12 @@ const Skills = () => {
     //    AND either first mouseover (initialtext set) OR activeText blank (subsequent mouseovers)
     //    as long as user yet to click
     // prettier-ignore
-    console.log(id)
+
     if (
       id &&
       !iconClicked &&
       (activeText[1] === initialActiveText || !activeText[1])
     ) {
-      console.log("setting")
       setActiveFaintText([skillsText[id][0], skillsText[id][1]])
       //on first mouseOver want initial message to fade out
       setActiveText(["", ""])
@@ -51,15 +50,13 @@ const Skills = () => {
         <div
           onClick={handleIconClick}
           onMouseOver={handleMouseOver}
+          onFocus={handleMouseOver}
           onMouseOut={handleMouseOut}
+          onBlur={handleMouseOut}
           className={skillsStyles.iconsContainer}
         >
-          <ul className={skillsStyles.floatingIcons}>
-            <div className={skillsStyles.background}></div>
-            <li
-              className={`${skillsStyles.icon} ${skillsStyles.cssSass}`}
-              id="cssSass"
-            >
+          <ul>
+            <li className={skillsStyles.icon} id="cssSass">
               <p id="cssSass">CSS & Sass</p>
             </li>
             <li className={skillsStyles.icon} id="js">

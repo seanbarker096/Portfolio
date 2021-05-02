@@ -47,7 +47,6 @@ import React from "react"
 
 import * as projectPopUpStyles from "./projectPopUp.module.scss"
 import IconStrip from "./IconStrip"
-import Composition from "./Composition"
 
 const ProjectPopUp = ({
   active,
@@ -106,9 +105,3 @@ const ProjectPopUp = ({
 }
 
 export default ProjectPopUp
-
-{
-  /* <div className={projectPopUpStyles.compositionWrapper}>
-<Composition imgs={popUpImages} />
-</div> */
-}
