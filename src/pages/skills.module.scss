@@ -1,0 +1,255 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+@use "../styles/sass/_animations" as *;
+@use "sass:list";
+@use "sass:math";
+
+.skills {
+  background-color: $color-secondary-light;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // font-size: 2rem;
+  @include respond(tablet) {
+    font-size: $font-size-small;
+  }
+
+  padding: $padding-main;
+
+  .textContainer {
+    flex: 1;
+    max-height: 50vh;
+    padding: $padding-main;
+    position: relative;
+    height: 100%;
+    background-color: rgba($color-secondary-dark, 0.6);
+
+    border-radius: 5px;
+
+    list-style: inside;
+
+    .headings {
+      @include headingPrimary;
+      @include uMarginBottomMed;
+      position: relative;
+      min-height: 7.5rem;
+      @include respond(tablet) {
+        @include headingSecondary(black);
+        min-height: 5rem;
+      }
+      @include respond(phone) {
+        @include headingTertiary(black);
+        min-height: 3rem;
+      }
+      .headingMain {
+        height: 100%;
+        width: 100%;
+      }
+      .headingFaintActive {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        animation: fade-in 2s 1 linear;
+        opacity: $fade-in-opacity;
+      }
+    }
+    .textBox {
+      position: relative;
+
+      .textMain {
+        height: 100%;
+        width: 100%;
+      }
+
+      .textFaintActive {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        animation: fade-in 2s 1 linear;
+        opacity: $fade-in-opacity;
+      }
+    }
+  }
+  .iconsContainer {
+    $height: 50rem;
+    height: 30vw;
+    width: 80%;
+    @include respond(tablet) {
+      width: 100%;
+      height: 50vw;
+    }
+    border: 5px $color-secondary-dark solid;
+    background-image: linear-gradient(
+      to right,
+      $color-secondary-dark,
+      $color-secondary-light
+    );
+
+    border-radius: 5px;
+    align-self: center;
+    @include uMarginBottomLarge;
+    ul {
+      list-style: none;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      li {
+        cursor: pointer;
+        font-weight: $font-weight-heavy;
+        width: 15%;
+        padding-top: 15%;
+        text-align: center;
+        @include respond(tablet) {
+          width: 20%;
+          padding-top: 20%;
+        }
+
+        background-color: rgba($color-primary-dark, 1);
+
+        background-size: cover;
+
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: box-shadow 0.3s linear, scale 1s;
+
+        p {
+          @include centerAbsolute;
+        }
+
+        &:hover {
+          animation: hvr-buzz-out 1s linear 1, border-fade-in 1s linear 1;
+          box-shadow: 0 0.5rem 0.4rem rgba(0, 0, 0, 0.5),
+            inset 0 0 0 0.3rem $color-secondary-dark;
+        }
+
+        // @for $i from 1 through length($paths) {
+        //   &:#{nth-child($i)} {
+        //     animation: moveCircle-#{$i} $animationTime linear infinite;
+        //   }
+        // }
+        // animation: move 3s linear infinite;
+
+        &:nth-child(1) {
+          top: 0;
+          left: 0;
+        }
+
+        &:nth-child(2) {
+          top: 10%;
+          left: 77%;
+        }
+
+        &:nth-child(3) {
+          top: 10%;
+          left: 45%;
+        }
+
+        &:nth-child(4) {
+          top: 40%;
+          left: 25%;
+        }
+
+        &:nth-child(5) {
+          top: 55%;
+          left: 2%;
+        }
+
+        &:nth-child(6) {
+          top: 60%;
+          left: 45%;
+        }
+
+        &:nth-child(7) {
+          top: 65%;
+          left: 78%;
+        }
+
+        &:nth-child(8) {
+          top: 35%;
+          left: 60%;
+        }
+
+        &:nth-child(9) {
+          top: 5%;
+          left: 10%;
+        }
+      }
+    }
+  }
+}
+
+// $t: 20;
+// $animationTime: $t * 1s;
+// $speed: 100 / $t;
+
+// @function calculatePosition($speed, $time, $coord1) {
+//   $coord2: math.pow(math.pow($speed * $time, 2) - math.pow($coord1, 2), 0.5);
+//   @return $coord2;
+// }
+
+// $pathCircle1: (
+//   0: (
+//     0%,
+//     0%,
+//   ),
+//   12.5: (
+//     100%,
+//     calculatePosition($speed, 0.125 * 60, 100),
+//   ),
+//   25: (
+//     0%,
+//     calculatePosition($speed, 0.125 * 60, 0),
+//   ),
+//   50: (
+//     calculatePosition($speed, 0.125 * 60, 100),
+//     100%,
+//   ),
+//   62.5: (
+//     0%,
+//     calculatePosition($speed, 0.125 * 60, 0),
+//   ),
+//   75: (
+//     0%,
+//     calculatePosition($speed, 0.125 * 60, 0),
+//   ),
+//   87.5: (
+//     100%,
+//     calculatePosition($speed, 0.125 * 60, 100),
+//   ),
+//   100: (
+//     0%,
+//     0%,
+//   ),
+// );
+
+// $pathCircle2: (
+//   0: (
+//     0%,
+//     2,
+//   ),
+//   5: (
+//     10,
+//     2,
+//   ),
+// );
+
+// $paths: ($pathCircle1, $pathCircle2);
+// @for $i from 1 through length($paths) {
+//   @keyframes moveCircle-#{$i} {
+//     @each $step, $coords in list.nth($paths, $i) {
+//       #{$step * 1%} {
+//         top: list.nth($coords, 1);
+//         left: list.nth($coords, 2);
+//       }
+//     }
+//   }
+// }

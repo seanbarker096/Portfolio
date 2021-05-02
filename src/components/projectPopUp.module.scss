@@ -1,0 +1,123 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+$inactive-transition-time: 1s;
+.modal {
+  //main styling for modal
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(black, 0.8);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//MODAL TRANSITION STYLING
+.modalInactive {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.modalActive {
+  opacity: 1;
+  visibility: visible;
+  transition: all $transition-time-default;
+}
+
+.popup {
+  width: 80%;
+  @include respond(phone) {
+    width: 90%;
+  }
+  border-radius: 5px;
+  display: flex;
+  //stop image stretching
+  align-items: stretch;
+  justify-content: space-evenly;
+  padding: $padding-main;
+  transition: all 5s;
+  @include respond(tablet-large) {
+    font-size: $font-size-small;
+  }
+  //for backgorund image we added via inline styles
+  // background-size: cover;
+  // background-blend-mode: color;
+  position: relative;
+
+  .compositionWrapper {
+    flex: 0 0 47.5%;
+  }
+  .containerSecondary {
+    //strech this to full height so can position icons at bottom of popup
+    background-color: rgba($color-primary, 0.7);
+    border-radius: 5px;
+    padding: 1rem;
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    .headingMain {
+      @include uMarginBottomSmall;
+    }
+    .popUpBody {
+      //force icons to bottom
+      margin-bottom: auto;
+      // font-size: $font-size-large;
+      @include uMarginBottomLarge;
+    }
+    .footer {
+      display: flex;
+      & div:first-child {
+        margin-right: auto;
+      }
+      @include respond(tablet) {
+        flex-direction: column;
+      }
+    }
+  }
+  .backgroundImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-size: cover;
+    background-blend-mode: color;
+    z-index: -1;
+    filter: brightness(30%);
+  }
+  .close {
+    color: $color-primary-very-dark;
+    font-size: 4.5rem;
+    font-weight: 900;
+    position: absolute;
+    top: 1.5rem;
+    right: 0.5rem;
+    line-height: 0;
+    cursor: pointer;
+    &:hover {
+      color: $color-primary-light;
+    }
+  }
+
+  .close:active {
+  }
+}
+//Popup transition styling
+.popupActive {
+  opacity: 1;
+  transform: scale(1);
+  transition: transform $transition-time-default 0.3s,
+    opacity $transition-time-default;
+}
+.popupInactive {
+  opacity: 0;
+  transform: scale(0);
+  //fade out and then instantaneously reduce size to 0
+  transition: transform 0.01s $inactive-transition-time,
+    opacity $inactive-transition-time;
+}

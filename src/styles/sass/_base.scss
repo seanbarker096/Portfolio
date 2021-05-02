@@ -1,0 +1,51 @@
+// ////////////////////////
+// //RESETS
+
+@use "variables" as *;
+@use "mixins" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: gilroy;
+  src: url("../../fonts/Gilroy-Light.otf");
+}
+
+//////////////////////
+//TYPOGRAPHY
+body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "gilroy", "Ubuntu", sans-serif;
+  ::selection {
+    background: #ffd970;
+    color: #e2f1f3;
+  }
+  font-size: $font-size-default;
+  // @include respond(tablet) {
+  //   font-size: 1.5rem;
+  // }
+}
+
+html {
+  font-size: 62.5%; //1rem = 10px
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+  @include respond(tablet-large) {
+    font-size: 56%;
+  }
+  @include respond(tablet) {
+    font-size: 52.5%;
+  }
+  @include respond(phone) {
+    font-size: 47.5%;
+  }
+}

@@ -1,0 +1,47 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+.layout {
+  //extend everything below header to end of page
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 100vh;
+
+  .sidebar {
+    flex: 0 1 10%;
+  }
+
+  .content {
+    flex: 0 1 90%;
+  }
+}
+
+// .layout {
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   background-color: var(--color-primary-very-light);
+
+//   .main {
+//     //extend everything below header to end of page
+//     flex: 1 0 auto;
+
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: stretch;
+//     .sidebar {
+//       flex: 0 1 30%;
+//     }
+
+//     .contentAndFooter {
+//       //ensure main content and footer extend to end of page
+//       display: flex;
+//       flex-direction: column;
+//       align-items: stretch;
+//       .children {
+//         flex: 1 0 auto;
+//       }
+//     }
+//   }
+// }

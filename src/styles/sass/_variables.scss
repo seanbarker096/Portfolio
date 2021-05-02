@@ -1,0 +1,42 @@
+//colors
+$color-primary: #ffce47;
+$color-primary-dark: #ffc31f;
+$color-primary-light: #ffd970;
+$color-primary-very-dark: #f5b400;
+$color-primary-very-light: #fffaeb;
+
+$color-secondary: #d5eaec;
+$color-secondary-dark: #c0e4ed;
+$color-secondary-very-dark: #40aec9;
+$color-secondary-light: #e2f1f3;
+
+$color-black: rgba(0, 0, 0, 1);
+
+//text colors
+$color-text-white: #fffaeb;
+$color-text-whiteyellow: #fff5d6;
+
+//fonts
+$font-weight: 400;
+$font-weight-light: 300;
+$font-weight-heavy: 600;
+
+$font-size-large: 3rem;
+$font-size-default: 2rem;
+$font-size-small: 1.6rem;
+
+//Layout variables
+$padding-main: 2rem;
+
+//shadows
+$shadow: rgba(0, 0, 0, 0.25);
+$shadow-light: rgba(0, 0, 0, 0.1);
+$box-shadow-default: 0 0.4rem 0.4rem $shadow-light;
+$box-shadow-heavy: 0 0.6rem 0.4rem $shadow;
+$button-shadow-default: 0 0.5rem 0.4rem $shadow-light;
+
+//animation variables
+$fade-in-opacity: 0.2;
+$transition-time-default: 0.3s;
+//flexbox grid horizontal gutter size
+$flex-grid-horizontal-gutter: 2rem;

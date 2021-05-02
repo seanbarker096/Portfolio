@@ -7,7 +7,21 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-styled-components`,
+    // `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      // options: {
+      //   additionalData: `@use 'main' as *;`,
+      //   //allow mixins, variables etc to be accessible globally
+      //   sassOptions: {
+      //     includePaths: [`${__dirname}/src/styles/sass`],
+      //     // data: `@import "main.scss";`,
+      //   },
+      // },
+      options: {
+        useResolveUrlLoader: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

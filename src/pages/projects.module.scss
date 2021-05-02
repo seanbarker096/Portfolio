@@ -1,0 +1,116 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+.projects {
+  background-color: $color-secondary-light;
+  height: 100%;
+  padding: $padding-main;
+  @include respond(phone) {
+    padding: 2%;
+  }
+
+  position: relative;
+
+  .headingPrimary {
+    @include headingPrimary(black);
+    @include uMarginBottomLarge;
+    @include respond(phone) {
+      @include headingSecondary(black);
+    }
+  }
+
+  .grid {
+    padding: 0 10% 0 10%;
+    @include respond(tablet-large) {
+      padding: 0 5% 0 5%;
+    }
+    @include respond(tablet) {
+      padding: 0%;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .gridItem {
+      flex: 0 1 45%;
+      // margin: 10rem;
+      height: 20vw;
+      margin-bottom: $flex-grid-horizontal-gutter;
+      transition: all 0.5s;
+    }
+  }
+}
+
+//popup styling
+.popupList {
+  li {
+    list-style: none;
+  }
+  li::before {
+    content: "";
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-image: url("../images/checkmark.svg");
+    background-size: cover;
+    margin-right: 1rem;
+  }
+}
+
+.popUpLinks {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  svg {
+    margin-top: -0.75rem;
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1.5rem;
+    color: black;
+    flex: 1 auto;
+  }
+  img {
+    margin-top: -0.75rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    margin-right: 1.5rem;
+    color: black;
+  }
+  .herokuLogo {
+    height: 5rem;
+    width: 5rem;
+    margin-right: 0.4rem;
+    margin-left: -0.9rem;
+  }
+
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: $color-secondary-very-dark;
+  &:hover {
+    color: $color-secondary-very-dark;
+    // fill: $color-secondary-very-dark;
+  }
+}
+
+// .popupActive {
+//   position: absolute;
+//   background-color: orangered;
+//   height: 70%;
+//   width: 70%;
+//   opacity: 1;
+//   top: 50%;
+//   left: 50%;
+//   transform: scale(1) translate(-50%, -50%);
+//   transition: transform 5s, opacity 5s;
+// }
+// .popupInactive {
+//   position: absolute;
+//   opacity: 0;
+//   height: 70%;
+//   width: 70%;
+//   top: 50%;
+//   left: 50%;
+//   transform: scale(0) translate(-50%, -50%);
+//   transition: transform 5s, opacity 5s;
+// }

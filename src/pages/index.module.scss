@@ -1,0 +1,68 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+.sectionHome {
+  font-size: $font-size-large;
+  position: relative;
+  height: 100%;
+  text-align: center;
+  background-image: url("../images/sean-barker-portfolio-background-x1.jpg");
+  background-size: cover;
+  @include respond(phone) {
+    font-size: $font-size-default;
+  }
+
+  .container {
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    // height: 100%;
+    width: 100%;
+    padding: 10rem;
+    @include respond(tablet) {
+      padding: 2rem;
+    }
+  }
+
+  h1 {
+    background-color: $color-secondary;
+    @include uMarginBottomLarge;
+    // font-size: 10rem;
+    // @include respond(tablet) {
+    //   font-size: 5rem;
+    // }
+  }
+
+  h2 {
+    // font-size: 5rem;
+    @include uMarginBottomHuge;
+    @include respond(tablet) {
+      @include uMarginBottomMed;
+    }
+    // @include respond(tablet) {
+    //   font-size: 3rem;
+    //   @include uMarginBottomMed;
+    // }
+  }
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  @include respond(phone) {
+    flex-direction: column;
+    :not(:last-child) .button {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.button {
+  font-size: $font-size-default;
+  @include buttonPrimary(3rem, 3rem, 20rem); // display: flex;
+
+  @include respond(tablet) {
+    font-size: 1.7rem;
+    @include buttonPrimary(2rem, 2rem, 16rem);
+  }
+}

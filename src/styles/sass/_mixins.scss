@@ -1,0 +1,131 @@
+// //MIXINS
+@use "variables" as *;
+@use "sass:map";
+@use "sass:meta";
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == big-desktop) {
+    //or high res laptop
+    @media only screen and (min-width: 120em) {
+      //1920px
+      @content;
+    }
+  }
+  // @if ($breakpoint == laptop) {
+  //   @media only screen and (max-width: 85em) {
+  //     //1366px
+  //     @content;
+  //   }
+  // }
+  @if ($breakpoint == tablet-large) {
+    //1280px
+    @media only screen and (max-width: 80em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tablet) {
+    //768px
+    @media only screen and (max-width: 48em) {
+      @content;
+    }
+  }
+  // @if ($breakpoint == phone-large) {
+  //   //414px
+  //   @media only screen and (max-width: 26em) {
+  //     @content;
+  //   }
+  // }
+  @if ($breakpoint == phone) {
+    //360px
+    @media only screen and (max-width: 26em) {
+      @content;
+    }
+  }
+}
+
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin headingPrimary($color: $color-black) {
+  font-size: $font-size-large * 1.2;
+  color: $color;
+}
+
+@mixin headingSecondary($color: $color-primary-very-light) {
+  font-size: $font-size-default * 1.2;
+  color: $color;
+  // @include respond(tablet) {
+  //   font-size: $font-size-default;
+  // }
+}
+
+@mixin headingTertiary($color: $color-primary-very-light) {
+  font-size: $font-size-small * 1.2;
+  color: $color;
+}
+//UTILITIES
+@mixin uMarginBottomSmall {
+  margin-bottom: 0.5rem;
+}
+@mixin uMarginBottomMed {
+  margin-bottom: 2rem;
+}
+
+@mixin uMarginBottomLarge {
+  margin-bottom: 3rem;
+}
+
+@mixin uMarginBottomHuge {
+  margin-bottom: 5rem;
+}
+
+@mixin growOnHover($transition-time: 0.3s) {
+  transition: all $transition-time ease-in;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin buttonPrimary($icon-width, $icon-height, $width: 100%) {
+  display: flex;
+  align-items: center;
+  background-color: $color-secondary-light;
+  border: 2px solid $color-primary-dark;
+  padding: 1rem 0.5rem;
+  width: $width;
+
+  .buttonIcon {
+    flex: 0 0 auto;
+    width: $icon-width;
+    height: $icon-height;
+  }
+
+  .buttonText {
+    //setting flex-grow to 1 means can effectively add padding between icon
+    //and button text by just increasing the width of the overall button
+    flex: 1 0 auto;
+  }
+}
+
+@mixin addPadding(
+  $padding-top,
+  $padding-right,
+  $padding-bottom,
+  $padding-left
+) {
+  padding: $padding-top $padding-right $padding-bottom $padding-left;
+}
+
+////////////////////////////////////////////////////////////////////
+//MEDIA QUERIES
+
+//big desktop 1920px +
+//original styles 1366px-1920px
+//laptop 1280px - 1366px (not used)
+//tablet-large 768px - 1280px
+//tablet 414px - 768px
+//phone < 414px

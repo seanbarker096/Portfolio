@@ -1,0 +1,25 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+// //allows us to create generic styles applied to most buttons
+.wrapper {
+  border: 2px solid $color-secondary-very-dark;
+}
+// @use "../styles/sass/main.scss" as *;
+#button {
+  cursor: pointer;
+  box-shadow: $button-shadow-default;
+  transition: all 0.2s;
+  -webkit-backface-visibility: hidden;
+  -ms-transform: translateZ(0); /* IE 9 */
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+  }
+}

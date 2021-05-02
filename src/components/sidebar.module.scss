@@ -1,0 +1,161 @@
+// // @import "../styles/sass/main.scss";
+// @use "../styles/sass/main.scss" as *;
+
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+.sideBarContent {
+  height: 100%;
+  padding: 3rem 0.5rem 0 0.5rem;
+  background-color: $color-primary-very-dark;
+  font-weight: 700;
+  color: $color-primary-very-light;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  @include respond(tablet) {
+    font-size: $font-size-small;
+  }
+  // font-size: 1.5rem;
+  // @include respond(tablet) {
+  //   font-size: 1.5rem;
+  // }
+
+  .heading {
+    @include headingPrimary($color-primary-very-light);
+    @include uMarginBottomMed;
+    @include respond(phone) {
+      @include headingSecondary;
+      width: 100%;
+      align-self: center;
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    padding: 0 1.5rem;
+    margin-bottom: auto;
+    @include respond(phone) {
+      padding: 0rem;
+      margin-right: -0.5rem;
+    }
+  }
+
+  .footer {
+    padding: 0.2rem 0.2rem 1rem 0.2rem;
+  }
+
+  .icon {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1em;
+    z-index: 3;
+    fill: $color-primary-very-light;
+
+    &.mainIcon {
+      @include respond(phone) {
+        visibility: none;
+        width: 0;
+        height: 0;
+        .sideBarLink {
+          visibility: none;
+          width: 0;
+          height: 0;
+        }
+      }
+    }
+
+    &:hover {
+      fill: $color-secondary-very-dark;
+    }
+  }
+  .sideBarLink {
+    &:link,
+    :visited {
+      text-decoration: none;
+    }
+  }
+
+  .sideBarItem {
+    position: relative;
+    padding-left: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    height: 4rem;
+
+    .text {
+      position: relative;
+      z-index: 3;
+      color: $color-primary-very-light;
+      transition: background-size 2s;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &::before {
+      content: "";
+      //use position absolute so can sit above sideBarItem
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: $color-primary-light;
+      width: 5px;
+      height: 100%;
+      transform: scaleY(0);
+      transition: transform 0.2s, width 0.3s cubic-bezier(1, 0, 0, 1) 0.2s;
+    }
+
+    &:hover::before {
+      width: 100%;
+      transform: scaleY(1);
+      z-index: 2;
+    }
+
+    &:hover {
+      .icon {
+        fill: $color-secondary-very-dark;
+      }
+      .text {
+        //set background image as linear gardient and standar text color as backgorund color
+        background: linear-gradient(
+            $color-secondary-very-dark,
+            $color-secondary-very-dark
+          )
+          $color-primary-very-light no-repeat 0 0;
+        //set zero height so not initally visible
+        background-size: 0 100%;
+        //clip background except for inside text and make text transparent
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: stripes 0.25s 0.2s linear 1 forwards;
+      }
+    }
+    //because we want animation to begin and backgorund to be set on hover
+    @keyframes stripes {
+      to {
+        background-size: 100% 100%;
+      }
+    }
+
+    @include respond(phone) {
+      display: block;
+      padding: 0;
+      position: relative;
+      .text {
+        @include centerAbsolute;
+        display: inline-block;
+        width: 100%;
+      }
+    }
+  }
+}

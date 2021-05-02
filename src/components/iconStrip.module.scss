@@ -1,0 +1,38 @@
+@use "../styles/sass/_variables" as *;
+@use "../styles/sass/_mixins" as *;
+
+.iconStrip {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  @include respond(tablet) {
+    justify-content: space-evenly;
+  }
+  @include respond(phone) {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  font-size: $font-size-small;
+
+  li {
+    height: 6rem;
+    width: 6rem;
+
+    border-radius: 50%;
+    border: 1px black solid;
+    background-color: $color-primary-very-dark;
+    margin: 0 1rem;
+    @include respond(tablet) {
+      margin-bottom: 0.5rem;
+    }
+
+    //for position of spans in centre of each icon
+    position: relative;
+    span {
+      @include centerAbsolute;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+}
