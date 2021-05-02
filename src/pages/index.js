@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import * as homeStyles from "./index.module.scss"
 import NavButton from "../components/NavButton"
 import icons from "../images/sprite.svg"

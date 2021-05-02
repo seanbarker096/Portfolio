@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import * as aboutMeStyles from "./about-me.module.scss"
 import icons from "../images/sprite.svg"
 import bristolLogo from "../images/university-of-bristol-logo.png"

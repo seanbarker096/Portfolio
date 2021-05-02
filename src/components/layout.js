@@ -30,19 +30,3 @@ export default ({ children }) => {
     </div>
   )
 }
-
-// export default ({ children }) => {
-//   return (
-//     <div className={layoutStyles.layout}>
-//       <Head />
-//       <Header />
-//       <main className={layoutStyles.main}>
-//         <SideBar className={layoutStyles.sidebar} />
-//         <div className={layoutStyles.contentAndFooter}>
-//           <div className={layoutStyles.children}> {children}</div>
-//           <Footer />
-//         </div>
-//       </main>
-//     </div>
-//   )
-// }

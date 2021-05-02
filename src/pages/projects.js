@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import * as projectsStyles from "./projects.module.scss"
 import ProjectPopUp from "../components/ProjectPopUp"
 import ProjectCard from "../components/ProjectCard"
