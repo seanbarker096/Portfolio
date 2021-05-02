@@ -42,9 +42,9 @@ $inactive-transition-time: 1s;
   justify-content: space-evenly;
   padding: $padding-main;
   transition: all 5s;
-  @include respond(tablet-large) {
-    font-size: $font-size-small;
-  }
+  font-size: $font-size-small;
+  // @include respond(tablet-large) {
+  // }
   //for backgorund image we added via inline styles
   // background-size: cover;
   // background-blend-mode: color;
