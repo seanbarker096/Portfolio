@@ -6,7 +6,16 @@
   position: relative;
   height: 100%;
   text-align: center;
-  background-image: url("../images/sean-barker-portfolio-background-x1.jpg");
+  background-image: url("../images/sean-barker-portfolio-background.jpg");
+  @include respond(desktop-2x) {
+    background-image: url("../images/sean-barker-portfolio-background-large.jpg");
+  }
+  @include respond(big-desktop) {
+    background-image: url("../images/sean-barker-portfolio-background-large.jpg");
+  }
+  @include respond(phone-2x) {
+    background-image: url("../images/sean-barker-portfolio-background-phone.jpg");
+  }
   background-size: cover;
   @include respond(phone) {
     font-size: $font-size-default;

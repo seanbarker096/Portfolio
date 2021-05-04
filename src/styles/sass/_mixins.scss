@@ -11,6 +11,11 @@
       @content;
     }
   }
+  @if ($breakpoint == desktop-2x) {
+    @media only screen and (max-width: 120em) and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  }
   // @if ($breakpoint == laptop) {
   //   @media only screen and (max-width: 85em) {
   //     //1366px
@@ -23,6 +28,12 @@
       @content;
     }
   }
+  @if ($breakpoint == tablet-large-2x) {
+    @media only screen and (max-width: 80em) and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  }
+
   @if ($breakpoint == tablet) {
     //768px
     @media only screen and (max-width: 48em) {
@@ -41,6 +52,12 @@
       @content;
     }
   }
+  @if ($breakpoint == phone-2x) {
+    //360px
+    @media only screen and (max-width: 26em) and (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  }
 }
 
 @mixin centerAbsolute {
@@ -49,9 +66,9 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-@mixin headingPrimaryHuge($color:color-black){
+@mixin headingPrimaryHuge($color: color-black) {
   font-size: $font-size-huge;
-  color:$color
+  color: $color;
 }
 @mixin headingPrimary($color: $color-black) {
   font-size: $font-size-large * 1.2;

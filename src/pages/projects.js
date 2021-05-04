@@ -225,7 +225,10 @@ const portfolioBody = (
       <li>React hooks for handling component level state.</li>
       <li>CSS modules.</li>
       <li>Use of SCSS via Gatsby's Sass plugin.</li>
-      <li>Responsive web design using Sass mixins to create media queries.</li>
+      <li>
+        Responsive web design using Sass mixins to create media queries.
+        Responsive background images.
+      </li>
     </ul>
   </>
 )
